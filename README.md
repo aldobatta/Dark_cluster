@@ -45,10 +45,39 @@ http://flash.uchicago.edu/site/flashcode/coderequest/
 2) Once you get an email with details for your account download one of the different versions of the code.
 
 
-3) You'll get a file named **FLASH4.5.tar.gz** (or with a diferent version). Copy the file to folder where you want to extract it. If you want to upload it to the cluster use **scp** or **ftp**, and once in the cluster you can extract it with the command:
+3) You'll get a file named **FLASH4.5.tar.gz** (or with a diferent version). Copy the file to folder where you want to extract it. If you want to upload it to the cluster use **scp** or **ftp**. Once in the cluster you can extract it with:
 
 **tar -xzvf FLASH4.5.tar.gz**
 
-4) This will create a folder named FLASH4.5 with all the relevants files inside (mostly fortran code). You may want to do this only in the cluster (if you're not interested in testing the code locally).
+4) This will create a folder named FLASH4.5 with all the relevants files inside (mostly fortran code).
+
+5) Take a look at the manual:
+
+http://flash.uchicago.edu/site/flashcode/user_support/flash4_ug_4p5.pdf
+
+
+### Run a Sedov test
+
+Up to this point Flash is still not ready for use. The easy way to try it is to run on of the default tests. You can get an idea of the kind of tests at Flash4.5/source/Simulations/SimulationsMain. **This is the folder where new "setups" (initial conditions and physics to be used) are defined.**
+
+
+
+
+
+
+1) go into the Flash4.5/ folder and run:
+
+**./setup Sedov -auto**
+
+7) This will create an object folder (called object) which contains all relevant files to run a Sedov test.
+
+
+
+
+
+
+
+
+
 
 
