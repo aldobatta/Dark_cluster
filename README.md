@@ -58,18 +58,18 @@ http://flash.uchicago.edu/site/flashcode/user_support/flash4_ug_4p5.pdf
 
 ### Run a Sedov test
 
-Up to this point Flash is still not ready for use. The easy way to try it is to run on of the default tests. You can get an idea of the kind of tests at Flash4.5/source/Simulations/SimulationsMain. **This is the folder where new "setups" (initial conditions and physics to be used) are defined.**
+The easy way to get used to Flash is to run some of the default tests. Thy are contained in the folder *Flash4.5/source/Simulations/SimulationsMain/*. **This is the folder where new "setups" (initial conditions and physics to be used) are defined.**
 
 
-
-
-
-
-1) go into the Flash4.5/ folder and run:
+1) go into *Flash4.5/* and run:
 
 **./setup Sedov -auto**
 
-7) This will create an object folder (called object) which contains all relevant files to run a Sedov test.
+2) This will create an object folder, which is called "object" by default. The name can be changed by adding **-objdir=foldername** to the command above. This object folder will contain all relevant files to run a Sedov test.
+
+The cluster @ Dark is not in the list of default clusters contained in *Flash4.5/sites/* so the command **./setup Sedov -auto** will create a generic Makefile and Makefile.h inside the folder *object* according to the OS of the cluster.
+
+3) Go to */Flash4.5/object/* and take a look at **Makefile.h**. It contains definitions of location and names of libraries  and compilers needed to compile Flash. This file must be edited to in order to compile it.
 
 
 
