@@ -2,18 +2,12 @@
 Info on how to us the cluster @ DARK
 
 
-#---------------------------------------------------#
-
-Setting the modules needed for compilation
-
-#---------------------------------------------------#
+## Setting the modules needed for compilation
 
 
 When login into the cluster you need to import a few modules (containing the compilers you'll need).
 
 You'll need the following commands to load/unload and check which modules are up or down.
-
-#------------------------------------------------------------------------------------------------------#
 
 Command        |    Action
 
