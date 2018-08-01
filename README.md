@@ -29,10 +29,24 @@ You'll need the following commands to load/unload and check which modules are up
 
 
 
-The modules you'll need to compile codes like Flash or Gadget are:
+### The modules you'll need to compile codes like Flash or Gadget are:
 
 1) **/intel/15.0.1**         |    Module with intel compilers (C,fortran, and others) 
 
 2) **/intelmpi/5.0.2.044**  |    Module with intel mpi library compilers (for code parallelized with mpi) 
 
 
+## Flash
+
+1) The first step is to ask for permission to download Flash from the link:
+
+http://flash.uchicago.edu/site/flashcode/coderequest/
+
+2) Once you get an email with details for your account download one of the different versions of the code.
+
+
+3) The latest is contained in the compressed file **FLASH4.5.tar.gz** which can be extracted in the terminal with:
+
+**tar -xzvf FLASH4.5.tar.gz**
+
+4) This will create a folder named FLASH4.5 with all the relevants files inside (mostly fortran code).
