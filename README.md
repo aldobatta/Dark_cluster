@@ -45,8 +45,10 @@ http://flash.uchicago.edu/site/flashcode/coderequest/
 2) Once you get an email with details for your account download one of the different versions of the code.
 
 
-3) The latest is contained in the compressed file **FLASH4.5.tar.gz** which can be extracted in the terminal with:
+3) You'll get a file named **FLASH4.5.tar.gz** (or with a diferent version). Copy the file to folder where you want to extract it. If you want to upload it to the cluster use **scp** or **ftp**, and once in the cluster you can extract it with the command:
 
 **tar -xzvf FLASH4.5.tar.gz**
 
-4) This will create a folder named FLASH4.5 with all the relevants files inside (mostly fortran code).
+4) This will create a folder named FLASH4.5 with all the relevants files inside (mostly fortran code). You may want to do this only in the cluster (if you're not interested in testing the code locally).
+
+
