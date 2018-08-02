@@ -88,7 +88,7 @@ or
 
 **make -j 6**  which will use 6 CPUs to compile instead of one and will be much faster.
 
-6) If everything is defined correctly in *Makefile.h* and the needed modules are loaded correctly, this should produce an xecutable file named **flash4**. This is the executable file that runs the simulation you just defined. 
+6) If everything is defined correctly in *Makefile.h* and the needed modules are loaded correctly, this should produce an executable file named **flash4**. This is the file used to run the simulation you just defined. 
 
 ### Creating a folder for the simulation outputs.
 
