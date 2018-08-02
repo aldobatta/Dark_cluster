@@ -56,7 +56,7 @@ Then every time you login, these two commands will be executed and the modules w
 
 http://flash.uchicago.edu/site/flashcode/coderequest/
 
-2) Once you get an email with details for your account download one of the different versions of the code.
+2) Once you get an email with your account details, download one of the different versions of the code.
 
 
 3) You'll get a file named **FLASH4.5.tar.gz** (or with a diferent version). Copy the file to folder where you want to extract it. If you want to upload it to the cluster use **scp** or **ftp**. Once in the cluster you can extract it with:
@@ -90,7 +90,7 @@ The cluster @ Dark is not in the list of default clusters contained in *Flash4.5
 
 https://github.com/aldobatta/Dark_cluster/blob/master/Makefile.h
 
-And place it in the object folder that was created after running **./setup Sedov -auto**. This file has been already modified to point to the right directories for mpi and hdf5 libraries and compilers.
+And place it in the object folder that was created after running **./setup Sedov -auto**. This file has been already modified to point to the right directories for mpi and hdf5 libraries and compilers in the Dark cluster.
 
 **Note:** any modifications to *Makefile.h* in the */object* folder, will be present when creating new object folders for new setups **./setup Simulation**.
 
@@ -102,11 +102,12 @@ or
 
 **make -j 6**  which will use 6 CPUs to compile instead of one and will be much faster.
 
+
 6) If everything is defined correctly in *Makefile.h* and the needed modules are loaded correctly, this should produce an executable file named **flash4**. This is the file used to run the simulation you just defined. 
 
 ### Creating a folder for the simulation outputs.
 
-I recommend to have your outputs written outside of the *Flash4.5* folder, so that you can safely remove/modify/delete things inside *Flash4.5/* without worrying about deleting important results or viceversa.
+I recommend to have your outputs written outside of the *Flash4.5* folder, so that you can safely remove/modify/delete things inside *Flash4.5/* without worrying about deleting important results (or viceversa).
 
 1) Create a directory outside *Flash4.5/* to save your outputs.
 
@@ -114,11 +115,11 @@ I recommend to have your outputs written outside of the *Flash4.5* folder, so th
 
 2) Copy the file **flash.par** inside the object folder to the folder you just created.
 
-This file contains properties for the simulation, like resolution, final time, boundary conditions, etc. For some simulations, you may need to copy additional files to this folder (not for the Sedov test).
+This file contains properties for the simulation (resolution, final time, boundary conditions, etc.). For some simulations, you may need to copy additional files to this folder (not for the Sedov test).
 
 ### Running jobs in the cluster
 
-Once we have the file **flash4** we cannot just execute the file to run our simulation. In computing clusters there's usually a workload manager (a program) in charge of organizing all jobs, simulations, scripts, etc. sent by the cluster's users.
+Once we have the file **flash4** we cannot just execute the file to run our simulation. In computing clusters there's usually a workload manager (a program) in charge of organizing all jobs, simulations or scripts sent by the cluster's users.
 
 **Slurm** is the workload manager used by the **Dark cluster**. Check these links with useful commands and a brief explanation of how it works.
 
@@ -132,7 +133,7 @@ An example of a script with said instructions can be found here:
 
 https://github.com/aldobatta/Dark_cluster/blob/master/JobScript.sh
 
-In these scripts, all instructions directed to **Slurm** start with a **#**, like:
+In these kind of scripts, all instructions directed to **Slurm** start with a single **#**, like:
 
 **#SBATCH --nodes=2                # number of nodes allocated for this job**
 
@@ -146,7 +147,7 @@ Each node in the Dark cluster has 32 CPUs (tasks), so the instructions above are
 
 1) First make sure to put **JobScript.sh** (feel free to rename it) into the folder you want the outputs to be saved (**simulationName**).
 
-Once you modified the script to run your executable file **flash4** in *N* CPUs, you need to send it to **Slurm** which will put your job in the queue, and if there are enough nodes/CPUs available (not being used) your simulation will start running.
+Once you modified the script to run your executable file **flash4** in *N* CPUs, you need to send it to the queue. **Slurm** will read the instructions you gave in the script and if there are enough nodes/CPUs available (not being used) your simulation will start running.
 
 2) Send your job to the queue run:
 
@@ -162,15 +163,15 @@ You can check how many jobs are in the dark queue with:
 
 **squeue -p dark**
 
-Here you can see the jobs youe sent to the queue, and all other jobs in the queue.
+Here you can see the "active" jobs you sent to the queue, and active jobs from other users in the queue.
 
-You can check the status of your jobs using your **username**:
+Using your **username**, you can check the status of your jobs:
 
 **squeue -u username**
 
 ### Stoping jobs in queue
 
-You can cancel a job with:
+You can cancel one of your jobs with:
 
 **scancel jobID**
 
