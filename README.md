@@ -36,6 +36,18 @@ You'll need the following commands to load/unload and check which modules are up
 2) **/intelmpi/5.0.2.044**  |    Module with intel mpi library compilers (for code parallelized with mpi) 
 
 
+### Modules have to be loaded everytime you login into the cluster.
+
+To avoid havng to load the modules by hand every login, we can add this instructions to the file **.bashrc** in your home folder:
+
+Use **emacs** or **vim** to edit the file **.bashrc** and add the lines:
+
+**module load /intel/15.0.1**
+
+**module load /intelmpi/5.0.2.044**
+
+Then every time you login into your account these two commands will be executed and the modules will be loaded.
+
 ## Flash
 
 1) The first step is to ask for permission to download Flash from the link:
