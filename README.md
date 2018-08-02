@@ -86,6 +86,17 @@ And place it in the object folder that was created after running **./setup Sedov
 
 6) If everything is defined correctly in *Makefile.h* and the needed modules are loaded correctly, this should produce an xecutable file named **flash4**. This is the executable file that runs the simulation you just defined. 
 
+### Creating a folder for the simulation outputs.
+
+I recommend to have your outputs written outside of the *Flash4.5* folder, so that you can safely remove/modify/delete things inside *Flash4.5/* without worrying about deleting important results.
+
+1) Create a directory outside *Flash4.5/* to save your outputs.
+
+**mkdir simulationName**
+
+2) Copy the file **flash.par** inside the object folder to the folder you just created.
+
+This file contains properties for the simulation, like resolution, final time, boundary conditions, etc. For some simulations, you may need to copy additional files to this folder (not for the Sedov test).
 
 ### Running jobs in the cluster
 
@@ -100,6 +111,62 @@ https://slurm.schedmd.com/pdfs/summary.pdf
 When sending a job to the cluster (running a simulation) one has to create a script instructing **Slurm** how many CPUs (or tasks) want to be used, the ammount of RAM memory required by each CPU, the file that needs to be executed (**flash4** in our case) and other details.
 
 An example of a script with said instructions can be found here:
+
+https://github.com/aldobatta/Dark_cluster/blob/master/JobScript.sh
+
+In these scripts, all instructions directed to **Slurm** start with a **#**, like:
+
+**#SBATCH --nodes=2                # number of nodes allocated for this job**
+
+**#SBATCH --ntasks-per-node=32     # number of MPI ranks per node, There are 32 CPUs per node**
+
+Which allocates the number of nodes and CPUs wanted for the job.
+
+Each node in the Dark cluster has 32 CPUs (tasks), so the instructions above are asking for 64 CPUs. You can ask for less than 32 CPUs in different nodes, but it's better to use all CPUs available in a node since they are usually not assigned to another job and remain unused, wasting CPU time.
+
+### Sending your job to the queue
+
+1) First make sure to put **JobScript.sh** (feel free to rename it) into the folder you want the outputs to be saved (**simulationName**).
+
+Once you modified the script to run your executable file **flash4** in *N* CPUs, you need to send it to **Slurm** which will put your job in the queue, and if there are enough nodes/CPUs available (not being used) your simulation will start running.
+
+2) Send your job to the queue run:
+
+**sbatch JobScript.sh**
+
+The error and output files will be created in the same location as **JobScript.sh**. And an email should be sent to the email address indicating important events, like if the job stopped or started.
+
+3) As soon as there are enough CPUs available to run your job, you'll job will start running. 
+
+### Checking jobs in queue
+
+You can check how many jobs are in the dark queue with:
+
+**squeue -p dark**
+
+Here you can see the jobs youe sent to the queue, and all other jobs in the queue.
+
+You can check the status of your jobs using your **username**:
+
+**squeue -u username**
+
+### Stoping jobs in queue
+
+You can cancel a job with:
+
+**scancel jobID**
+
+or
+
+**scancel --name=jobName**
+
+
+The **jobID** can be seen with **squeue**, and it is assigned to your job once it starts running  (It should appear in the email notification).
+
+For a list of **Slurm** useful commands check:
+
+https://slurm.schedmd.com/pdfs/summary.pdf
+
 
 
 
