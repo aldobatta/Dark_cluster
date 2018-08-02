@@ -117,6 +117,9 @@ I recommend to have your outputs written outside of the *Flash4.5* folder, so th
 
 This file contains properties for the simulation (resolution, final time, boundary conditions, etc.). For some simulations, you may need to copy additional files to this folder (not for the Sedov test).
 
+
+-------
+
 ### Running jobs in the cluster
 
 Once we have the file **flash4** we cannot just execute the file to run our simulation. In computing clusters there's usually a workload manager (a program) in charge of organizing all jobs, simulations or scripts sent by the cluster's users.
