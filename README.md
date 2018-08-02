@@ -92,7 +92,7 @@ or
 
 ### Creating a folder for the simulation outputs.
 
-I recommend to have your outputs written outside of the *Flash4.5* folder, so that you can safely remove/modify/delete things inside *Flash4.5/* without worrying about deleting important results.
+I recommend to have your outputs written outside of the *Flash4.5* folder, so that you can safely remove/modify/delete things inside *Flash4.5/* without worrying about deleting important results or viceversa.
 
 1) Create a directory outside *Flash4.5/* to save your outputs.
 
