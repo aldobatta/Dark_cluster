@@ -78,7 +78,7 @@ https://github.com/aldobatta/Dark_cluster/blob/master/Makefile.h
 
 And place it in the object folder that was created after running **./setup Sedov -auto**. This file has been already modified to point to the right directories for mpi and hdf5 libraries and compilers.
 
-**Note** any modifications to *Makefile.h* in the */object* folder, will be present when creating new object folders for new setups **./setup Simulation**.
+**Note:** any modifications to *Makefile.h* in the */object* folder, will be present when creating new object folders for new setups **./setup Simulation**.
 
 5) Once you moved *Makefile.h* to the object folder compile Flash with the command:
 
