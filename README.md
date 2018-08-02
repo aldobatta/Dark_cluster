@@ -60,6 +60,7 @@ http://flash.uchicago.edu/site/flashcode/user_support/flash4_ug_4p5.pdf
 
 The easy way to get used to Flash is to run some of the default tests. Thy are contained in the folder *Flash4.5/source/Simulations/SimulationsMain/*. **This is the folder where new "setups" (initial conditions and physics to be used) are defined.**
 
+### Compiling the "setup" to obtain an executable file to run the simulation
 
 1) go into *Flash4.5/* and run:
 
@@ -69,14 +70,36 @@ The easy way to get used to Flash is to run some of the default tests. Thy are c
 
 The cluster @ Dark is not in the list of default clusters contained in *Flash4.5/sites/* so the command **./setup Sedov -auto** will create a generic Makefile and Makefile.h inside the folder *object* according to the OS of the cluster.
 
-3) Go to */Flash4.5/object/* and take a look at **Makefile.h**. It contains definitions of location and names of libraries  and compilers needed to compile Flash. This file must be edited to in order to compile it.
+3) Go to */Flash4.5/object/* and take a look at **Makefile.h**. It contains definitions of location and names of libraries  and compilers needed to compile Flash. This file must be edited to in order to compile Flash.
+
+4) Download the **Makefile.h** from:
+
+https://github.com/aldobatta/Dark_cluster/blob/master/Makefile.h
+
+And place it in the object folder that was created after running **./setup Sedov -auto**. This file has been already modified to point to the right directories for mpi and hdf5 libraries and compilers.
+
+**Note** any modifications to *Makefile.h* in the */object* folder, will be present when creating new object folders for new setups **./setup Simulation**.
+
+5) Once you moved *Makefile.h* to the object folder compile Flash with the command:
+
+**make**
+
+6) If everything is defined correctly in *Makefile.h* and the needed modules are loaded correctly, this should produce an xecutable file named **flash4**. This is the executable file that runs the simulation you just defined. 
 
 
+### Running jobs in the cluster
 
+Once we have the file **flash4** we cannot just execute the file to run our simulation. In computing clusters there's usually a workload manager (a program) in charge of organizing all jobs, simulations, scripts, etc. sent by the cluster's users.
 
+**Slurm** is the workload manager used by the **Dark cluster**. Check these links with useful commands and a brief explanation of how it works.
 
+https://slurm.schedmd.com/quickstart.html
 
+https://slurm.schedmd.com/pdfs/summary.pdf
 
+When sending a job to the cluster (running a simulation) one has to create a script instructing **Slurm** how many CPUs (or tasks) want to be used, the ammount of RAM memory required by each CPU, the file that needs to be executed (**flash4** in our case) and other details.
+
+An example of a script with said instructions can be found here:
 
 
 
