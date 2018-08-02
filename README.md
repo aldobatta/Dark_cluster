@@ -38,7 +38,7 @@ You'll need the following commands to load/unload and check which modules are up
 
 ### Modules have to be loaded everytime you login into the cluster.
 
-To avoid havng to load the modules by hand every login, we can add this instructions to the file **.bashrc** in your home folder:
+To avoid havng to load the modules by hand in every login, we can add this instructions to the file **.bashrc** in your **username** folder:
 
 Use **emacs** or **vim** to edit the file **.bashrc** and add the lines:
 
@@ -46,7 +46,9 @@ Use **emacs** or **vim** to edit the file **.bashrc** and add the lines:
 
 **module load /intelmpi/5.0.2.044**
 
-Then every time you login into your account these two commands will be executed and the modules will be loaded.
+Then every time you login, these two commands will be executed and the modules will be loaded.
+
+------
 
 ## Flash
 
