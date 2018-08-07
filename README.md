@@ -152,7 +152,7 @@ Each node in the Dark cluster has 32 CPUs (tasks), so the instructions above are
 
 Once you modified the script to run your executable file **flash4** in *N* CPUs, you need to send it to the queue. **Slurm** will read the instructions you gave in the script and if there are enough nodes/CPUs available (not being used) your simulation will start running.
 
-2) To send your job to the queue writ the command:
+2) To send your job to the queue write the command:
 
 **sbatch JobScript.sh**
 
