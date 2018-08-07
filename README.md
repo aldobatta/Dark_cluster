@@ -130,7 +130,7 @@ https://slurm.schedmd.com/quickstart.html
 
 https://slurm.schedmd.com/pdfs/summary.pdf
 
-When sending a job to the cluster (running a simulation) one has to create a script instructing **Slurm** how many CPUs (or tasks) want to be used, the ammount of RAM memory required by each CPU, the file that needs to be executed (**flash4** in our case) and other details.
+When sending a job to the cluster (running a simulation) one has to create a script instructing **Slurm** how many CPUs (or tasks) want to be used, the amount of RAM memory required by each CPU, the file that needs to be executed (**flash4** in our case) and other details.
 
 An example of a script with said instructions can be found here:
 
