@@ -38,7 +38,7 @@ You'll need the following commands to load/unload and check which modules are up
 
 ### Modules have to be loaded everytime you login into the cluster.
 
-To avoid havng to load the modules by hand in every login, we can add this instructions to the file **.bashrc** in your **username** folder:
+To avoid having to load the modules by hand in every login, we can add this instructions to the file **.bashrc** in your **username** folder:
 
 Use **emacs** or **vim** to edit the file **.bashrc** and add the lines:
 
@@ -72,7 +72,7 @@ http://flash.uchicago.edu/site/flashcode/user_support/flash4_ug_4p5.pdf
 
 ### Run a Sedov test
 
-The easy way to get used to Flash is to run some of the default tests. Thy are contained in the folder *Flash4.5/source/Simulations/SimulationsMain/*. **This is the folder where new "setups" (initial conditions and physics to be used) are defined.**
+The easy way to get used to Flash is to run some of the default tests. They are contained in the folder *Flash4.5/source/Simulations/SimulationsMain/*. **This is the folder where new "setups" (initial conditions and physics to be used) are defined.**
 
 ### Compiling the "setup" to obtain an executable file to run the simulation
 
