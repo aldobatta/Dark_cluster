@@ -1,5 +1,5 @@
 # Dark_cluster
-Info on how to us the cluster @ DARK
+Info on how to use the cluster @ DARK
 
 
 ## Setting the modules needed for compilation
